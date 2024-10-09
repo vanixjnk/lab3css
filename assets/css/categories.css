@@ -1,0 +1,142 @@
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+body {
+    background: hsl(0, 0%, 0%);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+body::after {
+    --size: 80px;
+    --thickness: 2px;
+    content: "";
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    pointer-events: none;
+    background: linear-gradient(transparent 0 calc(var(--size) - var(--thickness)), rgb(255, 255, 255) calc(var(--size) - var(--thickness)) var(--size)) 50% 50% / var(--size) var(--size), linear-gradient(90deg, transparent 0 calc(var(--size) - var(--thickness)), rgb(255, 255, 255) calc(var(--size) - var(--thickness)) var(--size)) 50% 50% / var(--size) var(--size);
+    mask: linear-gradient(-35deg, transparent 50%, rgb(255, 255, 255));
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.2;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    background-color: transparent;
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav ul li a:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.product-item {
+    background-color: transparent;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.product-item img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.product-item h3 {
+    margin: 10px 0;
+    color: white;
+}
+
+.product-item h4 {
+    margin: 10px 0;
+    color: white;
+}
+
+.product-item p {
+    margin: 5px 0;
+    color: rgb(148 163 184);
+}
+
+.product-item:hover {
+    border: 1px solid rgb(37 99 235);
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: transparent;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+footer ul li {
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+    color: #ddd;
+}

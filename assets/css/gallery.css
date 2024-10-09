@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background: rgb(0, 6, 31);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body::after {
+    --size: 80px;
+    --thickness: 2px;
+    content: "";
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.2;
+}
+
+header h1 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+nav {
+    background-color: rgb(1, 16, 76);
+    padding: 20px;
+    margin: 0;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+
+/* Gallery */
+
+.gallery {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 80px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+}
+
+.gallery-item {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+}
+
+.gallery-item figcaption {
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover figcaption {
+    opacity: 1;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+footer {
+    background-color: rgb(1, 16, 76);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
